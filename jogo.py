@@ -1,3 +1,5 @@
+# SOLUCIONADO PÓS-OBI
+
 def checa_celula(celula, qtdViz):
   if celula == "0": # celula morta
     if qtdViz == 3: 
@@ -21,6 +23,7 @@ for _ in range(N):
 
 vetorNovo = "";
 for _ in range(Q): # Q-ésimo estado do jogo
+  newMatriz = [];
   for i in range(N):
     res = "";
     for j in range(N):
@@ -95,7 +98,8 @@ for _ in range(Q): # Q-ésimo estado do jogo
           if matriz[i+1][j-1] == "1": cc += 1;
 
           res += checa_celula(matriz[i][j], cc);
-    matriz[i] = res;
+    newMatriz.append(res);
+  matriz = newMatriz[0:N];
 
 for linha in matriz:
   print(linha);
